@@ -101,7 +101,8 @@ if [AUTOSTART]
     if [tail -n 1 /etc/rc.local = "exit 0" OR "exit(0)"]
       then
         #delete it if present
-        head -n -1 /etc/rc.local > /rc.local.backup ; mv rc.local.backup /etc/rc.local
+        head -n -1 /etc/rc.local > /rc.local.backup 
+        mv rc.local.backup /etc/rc.local
         fi
       
       #copy over the bluetooth services script
