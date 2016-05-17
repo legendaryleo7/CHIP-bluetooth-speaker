@@ -3,7 +3,9 @@ Turn a CHIP into a Bluetooth speaker
 After flashing your CHIP with Debian, log in as root and launch the
 setup script:
 ```
-NAME="My CHIP speaker" DEFAULT_PIN=1234 ./setup.sh
+#Change AUTOSTART to TRUE if you want it startup on boot.
+
+NAME="My CHIP speaker" DEFAULT_PIN=1234 AUTOSTART=FALSE ./setup.sh
 ```
 
 Don't forget to change the root and chip user passwords after installation.
