@@ -101,8 +101,8 @@ if [AUTOSTART]
     if [tail -n 1 /etc/rc.local = "exit 0" OR "exit(0)"]
       then
         #delete it if present
-        head -n -1 /etc/rc.local > /etc/rc.local.backup 
-        mv /etc/rc.local.backup /etc/rc.local
+        sudo head -n -1 /etc/rc.local > rc.local 
+        sudo mv rc.local /etc/rc.local
         fi
       
       #copy over the bluetooth services script
@@ -110,7 +110,7 @@ if [AUTOSTART]
       chmod +rx /usr/etc/bluetooth-audio-sink.sh
       
       #add it to the rc.local file and place an exit line at the end
-      cat >> /etc/rc.local <<EOF
+      cat <<EOF > /etc/rc.local
       /usr/etc/bluetooth-audio-sink.sh
       exit 0
       EOF
