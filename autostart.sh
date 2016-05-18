@@ -14,7 +14,7 @@
       chmod +rx /usr/etc/bluetooth-audio-sink.sh
       
 #add it to the rc.local file and place an exit line at the end
-cat <<EOF > /etc/rc.local
+cat <<EOF >> /etc/rc.local
 /usr/etc/bluetooth-audio-sink.sh
 exit 0
 EOF
