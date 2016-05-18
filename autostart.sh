@@ -1,10 +1,10 @@
-#! /bin/bash
+#!/bin/bash
 
 AUTOSTART=TRUE
-if [AUTOSTART]
+if ${AUTOSTART} = "TRUE"
   then
         #check for an exit line in rc.local
-    if [tail -n 1 /etc/rc.local = "exit 0" OR "exit(0)"]
+    if [ tail -n 1 /etc/rc.local = "exit 0" OR "exit(0)"]
       then
         #delete it if present
         sudo head -n -1 /etc/rc.local > rc.local 
@@ -23,4 +23,4 @@ EOF
 
 fi
 
-exit(0)
+
