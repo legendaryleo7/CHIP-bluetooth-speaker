@@ -1,9 +1,7 @@
 #!/bin/bash
 
-AUTOSTART=TRUE
-if ${AUTOSTART} = "TRUE"
-  then
-        #check for an exit line in rc.local
+
+          #check for an exit line in rc.local
     if [ tail -n 1 /etc/rc.local = "exit 0" OR "exit(0)"]
       then
         #delete it if present
@@ -21,6 +19,5 @@ cat <<EOF > /etc/rc.local
 exit 0
 EOF
 
-fi
 
 
